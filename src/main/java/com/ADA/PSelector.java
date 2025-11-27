@@ -10,10 +10,8 @@ public class PSelector {
 
     public Double getExpectedUtility (Pokemon pokemon1, Map<PType, Double> probabilities){
         Double expectedU = 0.0;
-
         for(PType p : probabilities.keySet()){
             Double effectiveness = pokemon1.getBreed().getpType().getEffectivenessAgainst(p);
-
             // [effectiveness*damage]*probability
             expectedU = expectedU + effectiveness*pokemon1.getBreed().getAttack()*probabilities.get(p);
         }
@@ -21,7 +19,6 @@ public class PSelector {
     }
 
     public Pokemon getBestPokemon (List<Pokemon> pokemonList, Map<PType, Double> probabilities){
-
         Double bestEU = 0.0;
         Pokemon bestPokemon = null;
         for(Pokemon p : pokemonList) {
@@ -31,7 +28,6 @@ public class PSelector {
                 bestPokemon = p;
             }
         }
-
         return bestPokemon;
     }
 }
