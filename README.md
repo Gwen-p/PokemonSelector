@@ -102,14 +102,4 @@ This project directly relates to:
 ### 🔹 Population Statistics (with simulated battles)
 ### 🔹 Connection to Optimal Predictor Machine (simplified version)
 
-## 🚀 Project Structure
-
-```
-src/
-├── Pokemon.java          # Entity with HP and type
-├── PType.java           # Effectiveness rules
-├── Breed.java           # Statistics and properties
-└── BattleAI.java        # Decision logic with EU calculation
-```
-
 The system demonstrates how AI agents can make optimal decisions under uncertainty using probability theory and utility maximization principles.
