@@ -24,12 +24,9 @@ public enum PType {
     STEEL,
     FAIRY;
 
-    // NO inicializar aquí — se hará perezosamente.
     private Map<PType, Double> effectiveness;
 
-    // Método de inicialización perezosa
     private void initializeEffectiveness() {
-        // crear la estructura una única vez
         effectiveness = new EnumMap<>(PType.class);
 
         switch (this) {
@@ -194,14 +191,12 @@ public enum PType {
     }
 
     private void set(PType target, double multiplier) {
-        // asegúrate de que la estructura esté creada
         if (effectiveness == null) {
             effectiveness = new EnumMap<>(PType.class);
         }
         effectiveness.put(target, multiplier);
     }
 
-    // Usa getEffectiveness() para leer — esto inicializa perezosamente.
     public double getEffectivenessAgainst(PType target) {
         Map<PType, Double> eff = getEffectiveness();
         return eff.getOrDefault(target, 1.0);
@@ -209,7 +204,6 @@ public enum PType {
 
     public Map<PType, Double> getEffectiveness() {
         if (effectiveness == null) {
-            // crear y poblar
             effectiveness = new EnumMap<>(PType.class);
             initializeEffectiveness();
         }
