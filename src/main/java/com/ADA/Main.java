@@ -30,7 +30,7 @@ public class Main {
             System.out.println("Pokemon options:  ");
             for (Breed b : myLoader.selectRandomBreedsForBattle(pBreeds, nPokemonOptopns)) {
                 pokemons.add(new Pokemon(b.getHP(), b, b.getbName()));
-                System.out.println("    " + b.getbName());
+                //System.out.println("    " + b.getbName());
             }
 
             // Example probability distribution
@@ -40,7 +40,7 @@ public class Main {
             PSelector battle = new PSelector();
             Pokemon best = battle.getBestPokemon(pokemons, probs);
 
-            System.out.println("Best Pokémon chosen: " + best.getBreed().getbName());
+            System.out.println("Best Pokemon chosen: " + best.getBreed().getbName());
 
             // Run simulations
             BattleStatistics.runSimulations(best, pBreeds, 1000);
