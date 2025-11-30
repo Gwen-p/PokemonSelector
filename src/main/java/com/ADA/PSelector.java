@@ -23,7 +23,7 @@ public class PSelector {
         Pokemon bestPokemon = null;
         for(Pokemon p : pokemonList) {
             double currentEU = getExpectedUtility(p, probabilities);
-            System.out.println(p.getName()+" utility: "+currentEU);
+            System.out.println("    "+p.getName()+" utility: "+currentEU);
             if (currentEU > bestEU) {
                 bestEU = currentEU;
                 bestPokemon = p;
